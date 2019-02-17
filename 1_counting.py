@@ -17,17 +17,12 @@ urls = [
 
 
 fileList = [os.path.basename(x) for x in urls]
-#print(fileList)
 
 df = pd.DataFrame(fileList)
-#print(type(df))
+
 
 dfg = df.groupby([0]).size().sort_values(ascending=False).head(3)
 
 for d in dfg.index:
     print(d, dfg[d])
-#dfg = dfg.to_frame()
-#print(type(dfg))
-
-#print(dfg.index)
 
